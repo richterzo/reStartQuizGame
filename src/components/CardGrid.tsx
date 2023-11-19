@@ -40,7 +40,7 @@ const CardGrid: React.FC<CardGridProps> = ({ cards, onCardSelect, turnedCards, t
     return (
       <div
         key={cardIndex}
-        className={`p-4 border rounded cursor-pointer transform hover:scale-105 transition-transform ${
+        className={`p-2 border rounded cursor-pointer transform hover:scale-105 transition-transform ${
           isFlipped ? 'rotate-y-180' : ''
         }`}
         onClick={() => !isTurned && handleCardClick(cardIndex)}
@@ -59,7 +59,7 @@ const CardGrid: React.FC<CardGridProps> = ({ cards, onCardSelect, turnedCards, t
   };
 
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-5 gap-4">
       {cards.map((_, index) => renderCard(index))}
     </div>
   );

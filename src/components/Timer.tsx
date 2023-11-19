@@ -21,7 +21,15 @@ const Timer: React.FC<TimerProps> = ({ initialTime, onTimeEnd }) => {
     return () => clearInterval(interval);
   }, [timeLeft, onTimeEnd]);
 
-  return <div>Time Left: {timeLeft} seconds</div>;
+  return <div className='text-3xl'>
+    <span className='text-rose-600'>
+      Time Left:
+    </span> 
+    <br></br>
+    <span>
+      {timeLeft} s
+    </span>
+    </div>;
 };
 
 export default Timer;

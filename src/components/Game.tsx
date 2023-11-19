@@ -11,11 +11,6 @@ interface Team {
   color: string;
 }
 
-interface CardData {
-  question: string;
-  answer: string;
-}
-
 interface GameProps {
   teamCount: number;
   timerValue: number;
@@ -29,7 +24,7 @@ const Game: React.FC<GameProps> = ({ teamCount, timerValue }) => {
   })));
 
   const [turnedCardCount, setTurnedCardCount] = useState<number>(0);
-  const [selectedTeam, setSelectedTeam] = useState<number | null>(null);
+  const [selectedTeam, setSelectedTeam] = useState<number | null>(0);
   const [turnedCards, setTurnedCards] = useState<{ [key: number]: number | undefined }>(
     [...Array(16)].reduce((acc, _, index) => ({ ...acc, [index]: undefined }), {})
   );
@@ -51,6 +46,10 @@ const Game: React.FC<GameProps> = ({ teamCount, timerValue }) => {
       { question: 'Question 14', answer: 'Answer 3' },
       { question: 'Question 15', answer: 'Answer 3' },
       { question: 'Question 16', answer: 'Answer 16' },
+      { question: 'Question 17', answer: 'Answer 3' },
+      { question: 'Question 18', answer: 'Answer 3' },
+      { question: 'Question 19', answer: 'Answer 3' },
+      { question: 'Question 20', answer: 'Answer 16' },
     
   ];
 

@@ -5,7 +5,7 @@ import Game from './components/Game'; // Assuming you have a Game component
 const App: React.FC = () => {
   const [gameStarted, setGameStarted] = useState<boolean>(false);
   const [teamCount, setTeamCount] = useState<number>(1);
-  const [timerValue, setTimerValue] = useState<number>(60);
+  const [timerValue, setTimerValue] = useState<number>(600);
 
   const startGame = (count: number) => {
     setTeamCount(count);

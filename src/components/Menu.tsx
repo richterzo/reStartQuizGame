@@ -6,13 +6,13 @@ interface MenuProps {
 
 const Menu: React.FC<MenuProps> = ({ onStart }) => {
   const [teamCount, setTeamCount] = useState<number>(1);
-  const [timerValue, setTimerValue] = useState<number>(60);
+  const [timerValue, setTimerValue] = useState<number>(600);
 
   const handleStart = () => {
-    if (teamCount >= 1 && teamCount <= 8) {
+    if (teamCount >= 1 && teamCount <= 10) {
       onStart(teamCount, timerValue);
     } else {
-      alert('Team count must be between 1 and 8');
+      alert('Team count must be between 1 and 10');
     }
   };
 
@@ -28,9 +28,9 @@ const Menu: React.FC<MenuProps> = ({ onStart }) => {
             type="number"
             className="text-center text-xl p-2 rounded w-1/4 min-w-[100px] bg-transparent"
             value={teamCount}
-            onChange={(e) => setTeamCount(Math.max(1, Math.min(8, parseInt(e.target.value))))}
+            onChange={(e) => setTeamCount(Math.max(1, Math.min(10, parseInt(e.target.value))))}
             min={1}
-            max={8}
+            max={10}
           />
         </div>
 
@@ -38,7 +38,7 @@ const Menu: React.FC<MenuProps> = ({ onStart }) => {
           <span>Timer: </span>
           <input
             type="number"
-            className="text-center text-xl p-2 rounded w-1/4 min-w-[100px] bg-transparent"
+            className="text-center text-xl p-2 rounded w-1/4 min-w-[100px]"
             value={timerValue}
             onChange={(e) => setTimerValue(Math.max(1, parseInt(e.target.value)))}
             min={1}
