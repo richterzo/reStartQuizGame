@@ -15,6 +15,7 @@ const Menu: React.FC<MenuProps> = ({ onStart }) => {
       alert('Team count must be between 1 and 10');
     }
   };
+  //FIXED
 
   return (
     <div className="h-screen w-full flex flex-col items-center justify-center gradient-animate">
